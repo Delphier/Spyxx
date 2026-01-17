@@ -10,7 +10,7 @@ def download(url):
 	with urllib.request.urlopen(url) as resp:
 		return resp.read()
 
-MANIFEST_URL = "https://aka.ms/vs/17/release/channel"
+MANIFEST_URL = "https://aka.ms/vs/stable/channel"
 print("Checking Visual Studio Manifest...")
 chman = json.loads(download(MANIFEST_URL))
 vsman_url = chman["channelItems"][0]["payloads"][0]["url"]
